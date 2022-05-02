@@ -1,0 +1,48 @@
+{
+    "kind": "collectionType",
+    "collectionName": "pets",
+    "info": {
+        "singularName": "pet",
+        "pluralName": "pets",
+        "displayName": "Pet",
+        "description": ""
+    },
+    "options": {
+        "draftAndPublish": false
+    },
+    "pluginOptions": {},
+    "attributes": {
+        "name": {
+            "type": "string"
+        },
+        "birth": {
+            "type": "date"
+        },
+        "note": {
+            "type": "text"
+        },
+        "image": {
+            "type": "media",
+            "multiple": false,
+            "required": false,
+            "allowedTypes": [
+                "images"
+            ]
+        },
+        "customer": {
+            "type": "relation",
+            "relation": "manyToOne",
+            "target": "api::customer.customer",
+            "inversedBy": "pets"
+        },
+        "dead": {
+            "type": "boolean",
+            "default": false
+        },
+        "type": {
+            "type": "relation",
+            "relation": "oneToOne",
+            "target": "api::pet-type.pet-type"
+        }
+    }
+}

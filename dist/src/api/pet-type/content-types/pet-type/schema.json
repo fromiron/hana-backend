@@ -1,0 +1,29 @@
+{
+    "kind": "collectionType",
+    "collectionName": "pet_types",
+    "info": {
+        "singularName": "pet-type",
+        "pluralName": "pet-types",
+        "displayName": "pet_type",
+        "description": ""
+    },
+    "options": {
+        "draftAndPublish": false
+    },
+    "pluginOptions": {},
+    "attributes": {
+        "type": {
+            "type": "string"
+        },
+        "icon": {
+            "allowedTypes": [
+                "images",
+                "files",
+                "videos",
+                "audios"
+            ],
+            "type": "media",
+            "multiple": false
+        }
+    }
+}

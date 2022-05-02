@@ -1,0 +1,47 @@
+{
+    "kind": "collectionType",
+    "collectionName": "customers",
+    "info": {
+        "singularName": "customer",
+        "pluralName": "customers",
+        "displayName": "Customer",
+        "description": ""
+    },
+    "options": {
+        "draftAndPublish": false
+    },
+    "pluginOptions": {},
+    "attributes": {
+        "kana": {
+            "type": "string",
+            "required": true
+        },
+        "kanji": {
+            "type": "string"
+        },
+        "email": {
+            "type": "email"
+        },
+        "address": {
+            "type": "string"
+        },
+        "age_group": {
+            "type": "integer"
+        },
+        "note": {
+            "type": "text"
+        },
+        "phone": {
+            "type": "string"
+        },
+        "pets": {
+            "type": "relation",
+            "relation": "oneToMany",
+            "target": "api::pet.pet",
+            "mappedBy": "customer"
+        },
+        "zipcode": {
+            "type": "string"
+        }
+    }
+}
