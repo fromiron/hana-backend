@@ -25,9 +25,6 @@
         "address": {
             "type": "string"
         },
-        "age_group": {
-            "type": "integer"
-        },
         "note": {
             "type": "text"
         },
@@ -42,6 +39,16 @@
         },
         "zipcode": {
             "type": "string"
+        },
+        "age_group": {
+            "type": "relation",
+            "relation": "oneToOne",
+            "target": "api::age-group.age-group"
+        },
+        "sex": {
+            "type": "relation",
+            "relation": "oneToOne",
+            "target": "api::sex.sex"
         }
     }
 }
