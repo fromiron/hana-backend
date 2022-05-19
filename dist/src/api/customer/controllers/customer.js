@@ -30,4 +30,15 @@ exports.default = strapi_1.factories.createCoreController('api::customer.custome
             },
         });
     },
+    async ageGroup(ctx) {
+        const user = await strapi.plugins["users-permissions"].services.jwt.getToken(ctx);
+        if (!user) {
+            return ctx.badRequest(null, [
+                { message: "No authorization header was found" },
+            ]);
+        }
+        const knex = strapi.db.connection;
+        const data = await knex.select('ag.group', 'cagl.age_group_id', knex.raw('COUNT(*) as count')).from('customers_age_group_links as cagl').leftJoin('age_groups as ag', 'cagl.age_group_id', 'ag.id').groupBy('cagl.age_group_id');
+        return ctx.body = data;
+    }
 }));

@@ -6,7 +6,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const strapi_1 = require("@strapi/strapi");
 // @ts-ignore
 exports.default = strapi_1.factories.createCoreController('api::pet-type.pet-type', ({ strapi }) => ({
-    //各ペットタイプ別登録数をリターン
+    //各ペットタイプ別登録数をリターンする
     async count(ctx) {
         const user = await strapi.plugins["users-permissions"].services.jwt.getToken(ctx);
         if (!user) {
