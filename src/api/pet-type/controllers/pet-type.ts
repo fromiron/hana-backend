@@ -3,10 +3,9 @@
  */
 
 import {factories} from '@strapi/strapi'
+import {StrapiInterface} from "../../../../interface/strapiKnex";
 
-
-// @ts-ignore
-export default factories.createCoreController('api::pet-type.pet-type', ({strapi}) => ({
+export default factories.createCoreController('api::pet-type.pet-type', ({strapi}: { strapi: StrapiInterface }) => ({
   //各ペットタイプ別登録数をリターンする
   async count(ctx) {
     const user = await strapi.plugins["users-permissions"].services.jwt.getToken(ctx);
