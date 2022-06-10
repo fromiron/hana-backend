@@ -1,0 +1,21 @@
+{
+  "kind": "collectionType",
+  "collectionName": "cms_links",
+  "info": {
+    "singularName": "cms-link",
+    "pluralName": "cms-links",
+    "displayName": "cms_links"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "url": {
+      "type": "string"
+    }
+  }
+}
